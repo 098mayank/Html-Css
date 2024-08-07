@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+        * {
+            animation: rotate 10s linear infinite;
+        }
+        .sky {
+            width: 100vw;
+            height: 100vh;
+            background-color: black; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            animation: animate-sky 20s linear infinite; 
+        }
+        .sun, .moon {
+            position: absolute;
+            width: 50vmin;
+            height: 50vmin;
+            border-radius: 50%;
+        }
+        .sun {
+            background-color: gold;
+            animation: animate-sun 10s linear infinite;
+        }
+        .moon {
+            background-color: slate;
+            animation: animate-moon 10s linear infinite;
+        }
+        @keyframes animate-sky {
+            0% {
+                background-color: black;
+            }
+            50% {
+                background-color: blue; /* Change background color to blue */
+            }
+            100% {
+                background-color: black;
+            }
+        }
+        @keyframes animate-sun {
+            50% {
+                box-shadow: 0 0 5em 1em white;
+            }
+        } 
+        @keyframes animate-moon {
+            from {
+                transform: translateX(-100vmin);
+            }
+            50% {
+                background-color: black;
+            }
+            to {
+                transform: translateX(100vmin);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <div class="sun"></div>
+        <div class="moon"></div>
+    </div>
+</body>
+</html>
+
+
